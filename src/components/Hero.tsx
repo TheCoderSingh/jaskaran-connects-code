@@ -1,19 +1,36 @@
 import { Button } from '@/components/ui/button';
-import { ArrowDown, Github, Linkedin, Twitter, Mail } from 'lucide-react';
-import jaskaranPhoto from '@/assets/jaskaran-photo.jpg';
+import { ArrowDown, Github, Twitter, Mail, Linkedin } from 'lucide-react';
+import jaskaranPhoto from '@/assets/jaskaran-photo.png';
+import { SiGithub, SiX } from '@icons-pack/react-simple-icons';
+import { FiLinkedin } from "react-icons/fi";
+
 
 const Hero = () => {
   const socialLinks = [
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Mail, href: '#contact', label: 'Email' },
+    { icon: SiGithub, href: 'https://github.com/TheCoderSingh', label: 'GitHub' },
+    { icon: FiLinkedin, href: 'https://www.linkedin.com/in/thecodersingh/', label: 'LinkedIn' },
+    { icon: SiX, href: 'https://x.com/TheCoderSingh', label: 'X' },
+    { icon: Mail, href: 'mailto:thecodersingh@gmail.com', label: 'Email' },
   ];
 
   const scrollToAbout = () => {
     const aboutSection = document.querySelector('#about');
     if (aboutSection) {
       aboutSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToProjects = () => {
+    const projectsSection = document.querySelector('#projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToContact = () => {
+    const contactSection = document.querySelector('#contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -34,8 +51,8 @@ const Hero = () => {
                 Software Engineer & Community Builder crafting meaningful digital experiences from Vancouver 🇨🇦
               </p>
               <div className="flex flex-wrap gap-3">
-                <span className="px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-primary text-sm">
-                  Frontend Engineer @ Twiine
+                <span className="px-4 py-2 bg-secondary/10 border border-primary/20 rounded-full text-secondary text-sm">
+                  Cofounder & Frontend Engineer @ Twiine
                 </span>
                 <span className="px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent text-sm">
                   Founder @ Ctrl+Alt+Meet
@@ -44,10 +61,10 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <Button variant="creative" size="lg" className="animate-float">
+              <Button variant="creative" size="lg" className="animate-float" onClick={scrollToProjects}>
                 View My Work
               </Button>
-              <Button variant="outline" size="lg">
+              <Button variant="outline" size="lg" onClick={scrollToContact}>
                 Let's Connect
               </Button>
             </div>
@@ -60,6 +77,8 @@ const Hero = () => {
                   variant="ghost"
                   size="icon"
                   className="hover:scale-110 transition-transform duration-300"
+                  onClick={() => window.open(social.href, '_blank')}
+                  aria-label={social.label}
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <social.icon className="w-5 h-5" />
@@ -75,7 +94,7 @@ const Hero = () => {
                 <img 
                   src={jaskaranPhoto} 
                   alt="Jaskaran Singh" 
-                  className="w-full h-full object-cover"
+                  className="w-full object-contain"
                 />
               </div>
               {/* Floating elements */}
