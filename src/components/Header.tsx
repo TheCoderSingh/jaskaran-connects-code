@@ -14,6 +14,8 @@ const Header = () => {
     { name: 'Contact', href: '#contact' },
   ];
 
+  const resumeLink = 'https://drive.google.com/file/d/10aYW7LgLUKZ9gMHFTHKg3g7mWT6zz1Cl';
+
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
@@ -45,7 +47,7 @@ const Header = () => {
                 {item.name}
               </button>
             ))}
-            <Button variant="creative" size="sm">
+            <Button variant="creative" size="sm" onClick={() => window.open(resumeLink, '_blank')}>
               Resume
             </Button>
           </nav>
@@ -74,7 +76,7 @@ const Header = () => {
                   {item.name}
                 </button>
               ))}
-              <Button variant="creative" size="sm" className="mt-2 self-start">
+              <Button variant="creative" size="sm" className="mt-2 self-start" onClick={() => window.open(resumeLink, '_blank')}>
                 Resume
               </Button>
             </div>
