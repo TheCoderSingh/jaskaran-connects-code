@@ -1,49 +1,59 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink, Github, Users, TrendingUp, Brain, GraduationCap } from 'lucide-react';
+import { ExternalLink, Users, TrendingUp, Brain, GraduationCap } from 'lucide-react';
+import { SiGithub } from '@icons-pack/react-simple-icons';
 
 const Projects = () => {
+  const githubLink = 'https://github.com/TheCoderSingh';
+
   const projects = [
     {
       title: 'Twiine',
-      description: 'Co-founder & Frontend Engineer - A matchmaking platform for professional networking that connects like-minded professionals based on interests and goals.',
+      description: 'Build authentic professional connections, grow in your career and share your experiences.',
       icon: Users,
-      tags: ['React Native', 'TypeScript', 'Firebase', 'Figma'],
+      tags: ['React Native', 'TypeScript', 'Tailwind', 'Node.js', 'Express', 'MongoDB'],
       status: 'In Development',
       color: 'border-primary/20 hover:border-primary/40',
       role: 'Co-founder & Frontend Engineer',
-      impact: 'Building the future of professional networking'
+      impact: 'Building the future of professional networking',
+      live: 'https://twiine.framer.website/'
     },
     {
       title: 'Crypto Tracker',
-      description: 'A real-time cryptocurrency portfolio and watchlist tool with live market data, price alerts, and comprehensive analytics for informed trading decisions.',
+      description: 'A real-time cryptocurrency watchlist tool with live market data, price changes, and comprehensive analytics for informed trading decisions.',
       icon: TrendingUp,
-      tags: ['React', 'JavaScript', 'REST APIs', 'Chart.js'],
+      tags: ['React', 'JavaScript', 'REST APIs', 'Chart.js', 'MySQL'],
       status: 'Live',
       color: 'border-creative-cyan/20 hover:border-creative-cyan/40',
       role: 'Full-stack Developer',
-      impact: 'Helping users track $10M+ in crypto assets'
+      impact: 'Helping users track crypto assets',
+      code: 'https://github.com/TheCoderSingh/crypto-tracker',
+      live: 'https://crypto.thecodersingh.com/'
     },
     {
       title: 'Aura',
-      description: 'An AI-powered journaling application that provides personalized insights, mood tracking, and intelligent prompts to enhance mental well-being.',
+      description: 'Aura helps you make informed travel decisions by providing real-time air quality updates for your destination. It tells you whether it’s safe to travel and offers personalized precautions.',
       icon: Brain,
-      tags: ['React', 'TypeScript', 'OpenAI', 'Node.js'],
-      status: 'Beta',
+      tags: ['React', 'JavaScript', 'MySQL', 'Node.js', 'Express'],
+      status: 'Live',
       color: 'border-creative-pink/20 hover:border-creative-pink/40',
       role: 'Lead Developer',
-      impact: 'Supporting mental health through AI insights'
+      impact: 'Helping plan trips with air quality insights',
+      code: 'https://github.com/TheCoderSingh/aura',
+      live: 'https://aura.thecodersingh.com/'
     },
     {
       title: 'Alunos',
-      description: 'A comprehensive platform for student networking and productivity, featuring study groups, project collaboration, and academic resource sharing.',
+      description: 'Alunos enhances homestay experiences by streamlining management for Canadian companies and making communication between hosts, students, and coordinators seamless.',
       icon: GraduationCap,
-      tags: ['React', 'Firebase', 'Material-UI', 'PWA'],
+      tags: ['Vue.js', 'Laravel', 'Quasar', 'GraphQL'],
       status: 'Live',
       color: 'border-accent/20 hover:border-accent/40',
-      role: 'Frontend Developer',
-      impact: 'Connecting 500+ students across universities'
+      role: 'Backend Developer',
+      impact: 'Streamlining Homestay Management and Communication',
+      code: 'https://github.com/TheCoderSingh/alunos-website',
+      live: 'https://alunos.thecodersingh.com/'
     }
   ];
 
@@ -84,7 +94,7 @@ const Projects = () => {
                     className={`
                       ${project.status === 'Live' ? 'border-accent text-accent' : 
                         project.status === 'Beta' ? 'border-creative-yellow text-creative-yellow' : 
-                        'border-primary text-primary'}
+                        'border-creative-yellow text-creative-yellow'}
                     `}
                   >
                     {project.status}
@@ -107,13 +117,16 @@ const Projects = () => {
                   </div>
                   
                   <div className="flex gap-3">
-                    <Button variant="outline" size="sm" className="group-hover:border-primary/30 transition-colors duration-300">
-                      <Github className="w-4 h-4 mr-2" />
-                      Code
-                    </Button>
-                    <Button variant="ghost" size="sm" className="group-hover:text-primary transition-colors duration-300">
+                    {project.code && (
+                      <Button variant="ghost" size="sm" className="group-hover:text-primary transition-colors duration-300" onClick={() => window.open(project.code, '_blank')}>
+                        <SiGithub className="w-4 h-4 mr-2" />
+                        Code
+                      </Button>
+                    )}
+                    
+                    <Button variant="ghost" size="sm" className="group-hover:text-primary transition-colors duration-300" onClick={() => window.open(project.live, '_blank')}>
                       <ExternalLink className="w-4 h-4 mr-2" />
-                      Demo
+                      Live
                     </Button>
                   </div>
                 </div>
@@ -123,8 +136,8 @@ const Projects = () => {
         </div>
 
         <div className="text-center mt-12 animate-fade-in" style={{ animationDelay: '0.8s' }}>
-          <Button variant="accent" size="lg" className="group">
-            <Github className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform duration-300" />
+          <Button variant="accent" size="lg" className="group" onClick={() => window.open(githubLink, '_blank')}>
+            <SiGithub className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform duration-300" />
             View All Projects on GitHub
           </Button>
         </div>

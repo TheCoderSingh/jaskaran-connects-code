@@ -27,9 +27,12 @@ const Skills = () => {
   ];
 
   const certifications = [
-    'AWS Certified Developer',
-    'Google Analytics Certified',
-    'Agile & Scrum Methodologies'
+    // 'AWS Certified Developer',
+    // 'Google Analytics Certified',
+    // 'Agile & Scrum Methodologies'
+    'Under Construction',
+    'Under Construction',
+    'Under Construction',
   ];
 
   return (
