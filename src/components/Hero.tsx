@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { ArrowDown, Github, Twitter, Mail, Linkedin } from 'lucide-react';
+import { ArrowDown, Mail } from 'lucide-react';
 import jaskaranPhoto from '@/assets/jaskaran-photo.png';
 import { SiGithub, SiX } from '@icons-pack/react-simple-icons';
 import { FiLinkedin } from "react-icons/fi";
@@ -43,7 +43,7 @@ const Hero = () => {
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
                 <span className="text-foreground">Hey, I'm </span>
-                <span className="bg-gradient-hero bg-clip-text text-transparent animate-glow-pulse">
+                <span className="bg-gradient-hero bg-clip-text text-transparent animate-infinite animate-pulse">
                   Jaskaran
                 </span>
               </h1>

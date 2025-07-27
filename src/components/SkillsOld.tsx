@@ -1,6 +1,4 @@
 import { Badge } from '@/components/ui/badge';
-import { Code, Cpu, Database, Languages, Server } from 'lucide-react';
-import { FiGithub } from 'react-icons/fi';
 
 const Skills = () => {
   const skillCategories = [
@@ -19,41 +17,26 @@ const Skills = () => {
       title: 'Backend & Tools',
       skills: [
         { name: 'Node.js', level: 85, color: 'bg-accent' },
-        { name: 'Express.js', level: 80, color: 'bg-creative-pink' },
         { name: 'Firebase', level: 88, color: 'bg-creative-orange' },
         { name: 'Git/GitHub', level: 90, color: 'bg-primary' },
         { name: 'REST APIs', level: 87, color: 'bg-secondary' },
-        { name: 'MongoDB', level: 80, color: 'bg-creative-pink' }
+        { name: 'MongoDB', level: 80, color: 'bg-creative-pink' },
+        { name: 'Figma', level: 85, color: 'bg-creative-cyan' }
       ]
     }
   ];
 
-  const skillIcons: Record<string, JSX.Element> = {
-  'React': <Code className="w-4 h-4 mr-2" />,
-  'React Native': <Code className="w-4 h-4 mr-2" />,
-  'TypeScript': <Languages className="w-4 h-4 mr-2" />,
-  'JavaScript': <Languages className="w-4 h-4 mr-2" />,
-  'HTML/CSS': <Code className="w-4 h-4 mr-2" />,
-  'Tailwind CSS': <Code className="w-4 h-4 mr-2" />,
-  'Node.js': <Server className="w-4 h-4 mr-2" />,
-  'Express.js': <Server className="w-4 h-4 mr-2" />,
-  'Firebase': <Database className="w-4 h-4 mr-2" />,
-  'Git/GitHub': <FiGithub className="w-4 h-4 mr-2" />,
-  'REST APIs': <Cpu className="w-4 h-4 mr-2" />,
-  'MongoDB': <Database className="w-4 h-4 mr-2" />
-};
-
-  // const certifications = [
-  //   // 'AWS Certified Developer',
-  //   // 'Google Analytics Certified',
-  //   // 'Agile & Scrum Methodologies'
-  //   'Under Construction',
-  //   'Under Construction',
-  //   'Under Construction',
-  // ];
+  const certifications = [
+    // 'AWS Certified Developer',
+    // 'Google Analytics Certified',
+    // 'Agile & Scrum Methodologies'
+    'Under Construction',
+    'Under Construction',
+    'Under Construction',
+  ];
 
   return (
-    <section id="skills" className="min-h-screen flex items-center py-20 px-4 bg-muted/30">
+    <section id="skills" className="py-20 px-4 bg-muted/30">
       <div className="container mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
@@ -66,7 +49,7 @@ const Skills = () => {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {skillCategories.map((category, categoryIndex) => (
-            <div
+            <div 
               key={category.title}
               className="space-y-6 animate-slide-in"
               style={{ animationDelay: `${categoryIndex * 0.3}s` }}
@@ -75,16 +58,32 @@ const Skills = () => {
                 <span className="w-8 h-1 bg-gradient-primary rounded-full mr-3"></span>
                 {category.title}
               </h3>
-
-              <div className="flex flex-wrap gap-3">
+              
+              <div className="space-y-4">
                 {category.skills.map((skill, skillIndex) => (
-                  <Badge
+                  <div 
                     key={skill.name}
-                    className={`text-sm px-4 py-2 ${skill.color} text-white hover:opacity-90 transition flex items-center`}
+                    className="group"
                     style={{ animationDelay: `${(categoryIndex * 0.3) + (skillIndex * 0.1)}s` }}
                   >
-                    {skillIcons[skill.name]}{skill.name}
-                  </Badge>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-foreground font-medium group-hover:text-primary transition-colors duration-300">
+                        {skill.name}
+                      </span>
+                      <span className="text-sm text-muted-foreground">
+                        {skill.level}%
+                      </span>
+                    </div>
+                    <div className="w-full bg-border rounded-full h-3 overflow-hidden">
+                      <div 
+                        className={`h-full ${skill.color} rounded-full transition-all duration-1000 ease-out group-hover:scale-105 origin-left`}
+                        style={{ 
+                          width: `${skill.level}%`,
+                          animationDelay: `${(categoryIndex * 0.3) + (skillIndex * 0.1) + 0.5}s`
+                        }}
+                      ></div>
+                    </div>
+                  </div>
                 ))}
               </div>
             </div>
@@ -92,7 +91,7 @@ const Skills = () => {
         </div>
 
         {/* Certifications */}
-        {/* <div className="mt-16 text-center animate-fade-in" style={{ animationDelay: '1s' }}>
+        <div className="mt-16 text-center animate-fade-in" style={{ animationDelay: '1s' }}>
           <h3 className="text-xl font-semibold mb-6 text-foreground">Certifications & Methodologies</h3>
           <div className="flex flex-wrap justify-center gap-3">
             {certifications.map((cert, index) => (
@@ -106,7 +105,7 @@ const Skills = () => {
               </Badge>
             ))}
           </div>
-        </div> */}
+        </div>
       </div>
     </section>
   );

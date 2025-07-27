@@ -30,7 +30,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <img src={jsLogo} alt="JS Logo" className="w-8 h-8 animate-glow-pulse" />
+            <img src={jsLogo} alt="JS Logo" className="w-8 h-8" />
             <span className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
               Jaskaran Singh
             </span>

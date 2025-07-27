@@ -1,13 +1,14 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Coffee, Users, Calendar, MapPin, Heart, MessageCircle } from 'lucide-react';
+import { SiDiscord } from '@icons-pack/react-simple-icons';
+import { Coffee, Users, Calendar, MessageCircle, Laugh, MapPinned, Group } from 'lucide-react';
 
 const Community = () => {
   const stats = [
-    { label: 'Weekly Coffee Chats', value: '15+', icon: Coffee },
-    { label: 'Community Members', value: '200+', icon: Users },
-    { label: 'Cities Connected', value: '5', icon: MapPin },
-    { label: 'Connections Made', value: '500+', icon: Heart }
+    { label: 'Weekly Coffee Chats', value: '20+', icon: Coffee },
+    { label: 'Community Members', value: '100+', icon: Users },
+    { label: 'Months Running', value: '6+', icon: Calendar },
+    { label: 'Laughs Shared', value: '1000+', icon: Laugh ,}
   ];
 
   const features = [
@@ -24,18 +25,20 @@ const Community = () => {
       color: 'text-primary'
     },
     {
-      icon: Users,
-      title: 'Cross-City Network',
-      description: 'Connecting tech professionals across Vancouver, Toronto, Montreal, and expanding to more cities.',
+      icon: MapPinned,
+      title: 'Born in Vancouver',
+      description: 'Launched in the heart of Vancouver to bridge the gap between strangers in tech, one meetup at a time.',
       color: 'text-accent'
     },
     {
-      icon: Calendar,
-      title: 'Regular Events',
-      description: 'From coding workshops to design thinking sessions, we host events that bring the community together.',
+      icon: Group,
+      title: 'Unexpected Collaborations',
+      description: 'What begins as a casual chat over coffee could evolve into side projects, mentorships, or even lifelong friendships.',
       color: 'text-creative-cyan'
     }
   ];
+
+  const communityLink = 'https://lu.ma/ctrlaltmeet';
 
   return (
     <section id="community" className="py-20 px-4 bg-muted/30">
@@ -112,7 +115,7 @@ const Community = () => {
                 We've created a space where introverts feel welcome, ideas are celebrated, and authentic 
                 connections flourish naturally.
               </p>
-              <div className="flex flex-wrap justify-center gap-4">
+              {/* <div className="flex flex-wrap justify-center gap-4">
                 <Button variant="accent" size="lg" className="group">
                   <Coffee className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform duration-300" />
                   Join Our Next Meetup
@@ -121,18 +124,27 @@ const Community = () => {
                   <Users className="w-5 h-5 mr-2" />
                   Community Guidelines
                 </Button>
-              </div>
+              </div> */}
+              
+                <Button variant="creative" size="lg" className="group">
+                  <Coffee className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform duration-300" />
+                  Join Our Next Meetup
+                </Button>
             </div>
           </CardContent>
         </Card>
 
-        {/* Call to Action */}
-        <div className="text-center mt-12 animate-fade-in" style={{ animationDelay: '1s' }}>
+        {/* Discord Invite */}
+        <div className="text-center mt-20 animate-fade-in" style={{ animationDelay: '1.2s' }}>
+          <h3 className="text-2xl font-bold text-foreground mb-4">
+            Continue the Conversation on Discord
+          </h3>
           <p className="text-lg text-muted-foreground mb-6">
-            Interested in bringing Ctrl+Alt+Meet to your city?
+            Chat between events, share ideas, and connect with other members anytime.
           </p>
-          <Button variant="creative" size="lg" className="animate-glow-pulse">
-            Let's Start a Chapter
+          <Button variant="glow" size="lg" className="animate-glow-pulse group" onClick={() => window.open(communityLink, '_blank')}>
+            <SiDiscord className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform duration-300" />
+            Join Our Community
           </Button>
         </div>
       </div>

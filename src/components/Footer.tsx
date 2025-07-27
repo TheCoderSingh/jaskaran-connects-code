@@ -1,4 +1,4 @@
-import { Heart, Code, Coffee } from 'lucide-react';
+import { Heart, Code } from 'lucide-react';
 import jsLogo from '@/assets/js-logo.png';
 
 const Footer = () => {
@@ -70,19 +70,16 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Community */}
+          {/* Let's Connect */}
           <div>
-            <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center">
-              <Coffee className="w-5 h-5 mr-2 text-creative-orange" />
-              Ctrl+Alt+Meet
-            </h3>
+            <h3 className="text-lg font-semibold text-foreground mb-4">Let’s Connect</h3>
             <p className="text-muted-foreground mb-4">
-              Join our weekly coffee chats and connect with amazing developers and creatives.
+              Interested in working together or just want to say hi? I’m always open to new ideas, collaborations, or coffee chats.
             </p>
             <div className="space-y-2 text-sm text-muted-foreground">
-              <p>📍 Vancouver, Toronto, Montreal</p>
-              <p>☕ Weekly meetups</p>
-              <p>🌟 200+ community members</p>
+              <p>📬 Drop me a message. I'd love to hear from you.</p>
+              <p>🤝 Open to work, collaborations, and side projects</p>
+              <p>📍 Based in Vancouver</p>
             </div>
           </div>
         </div>
