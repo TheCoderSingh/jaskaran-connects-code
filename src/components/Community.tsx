@@ -38,7 +38,8 @@ const Community = () => {
     }
   ];
 
-  const communityLink = 'https://lu.ma/ctrlaltmeet';
+  const lumaLink = 'https://lu.ma/ctrlaltmeet';
+  const communityLink = 'https://discord.gg/qd2TShQevr';
 
   return (
     <section id="community" className="py-20 px-4 bg-muted/30">
@@ -126,7 +127,7 @@ const Community = () => {
                 </Button>
               </div> */}
               
-                <Button variant="creative" size="lg" className="group">
+                <Button variant="creative" size="lg" className="group" onClick={() => window.open(lumaLink, '_blank')}>
                   <Coffee className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform duration-300" />
                   Join Our Next Meetup
                 </Button>
