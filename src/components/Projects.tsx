@@ -1,60 +1,95 @@
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { ExternalLink, Users, TrendingUp, Brain, GraduationCap } from 'lucide-react';
-import { SiGithub } from '@icons-pack/react-simple-icons';
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  ExternalLink,
+  Users,
+  TrendingUp,
+  Brain,
+  GraduationCap,
+} from "lucide-react";
+import { SiGithub } from "@icons-pack/react-simple-icons";
 
 const Projects = () => {
-  const githubLink = 'https://github.com/TheCoderSingh';
+  const githubLink = "https://github.com/TheCoderSingh";
 
   const projects = [
     {
-      title: 'Twiine',
-      description: 'Build authentic professional connections, grow in your career and share your experiences.',
+      title: "Twiine",
+      description:
+        "Build authentic professional connections, grow in your career and share your experiences.",
       icon: Users,
-      tags: ['React Native', 'TypeScript', 'Tailwind', 'Node.js', 'Express', 'MongoDB'],
-      status: 'In Development',
-      color: 'border-primary/20 hover:border-primary/40',
-      role: 'Co-founder & Frontend Engineer',
-      impact: 'Building the future of professional networking',
-      live: 'https://twiine.framer.website/'
+      tags: [
+        "React Native",
+        "TypeScript",
+        "Tailwind",
+        "Node.js",
+        "Express",
+        "MongoDB",
+      ],
+      status: "In Development",
+      color: "border-primary/20 hover:border-primary/40",
+      role: "Co-founder & Frontend Engineer",
+      impact: "Building the future of professional networking",
+      live: "https://twiine.framer.website/",
     },
     {
-      title: 'Crypto Tracker',
-      description: 'A real-time cryptocurrency watchlist tool with live market data, price changes, and comprehensive analytics for informed trading decisions.',
-      icon: TrendingUp,
-      tags: ['React', 'JavaScript', 'REST APIs', 'Chart.js', 'MySQL'],
-      status: 'Live',
-      color: 'border-creative-cyan/20 hover:border-creative-cyan/40',
-      role: 'Full-stack Developer',
-      impact: 'Helping users track crypto assets',
-      code: 'https://github.com/TheCoderSingh/crypto-tracker',
-      live: 'https://crypto.thecodersingh.com/'
-    },
-    {
-      title: 'Aura',
-      description: 'Aura helps you make informed travel decisions by providing real-time air quality updates for your destination. It tells you whether it’s safe to travel and offers personalized precautions.',
+      title: "HackerRivals",
+      description:
+        "World's first eSports-style hackathon with live audience engagement, professional entertainment, and competitive 3-hour programming challenges.",
       icon: Brain,
-      tags: ['React', 'JavaScript', 'MySQL', 'Node.js', 'Express'],
-      status: 'Live',
-      color: 'border-creative-pink/20 hover:border-creative-pink/40',
-      role: 'Lead Developer',
-      impact: 'Helping plan trips with air quality insights',
-      code: 'https://github.com/TheCoderSingh/aura',
-      live: 'https://aura.thecodersingh.com/'
+      tags: ["React", "TypeScript", "Tailwind"],
+      status: "Live",
+      color: "border-creative-cyan/20 hover:border-creative-cyan/40",
+      role: "Developer",
+      impact: "Building a community of competitive programmers",
+      live: "https://thecodersingh.github.io/hackerrivals-website/",
     },
     {
-      title: 'Alunos',
-      description: 'Alunos enhances homestay experiences by streamlining management for Canadian companies and making communication between hosts, students, and coordinators seamless.',
+      title: "Crypto Tracker",
+      description:
+        "A real-time cryptocurrency watchlist tool with live market data, price changes, and comprehensive analytics for informed trading decisions.",
+      icon: TrendingUp,
+      tags: ["React", "JavaScript", "REST APIs", "Chart.js", "MySQL"],
+      status: "Live",
+      color: "border-creative-cyan/20 hover:border-creative-cyan/40",
+      role: "Full-stack Developer",
+      impact: "Helping users track crypto assets",
+      code: "https://github.com/TheCoderSingh/crypto-tracker",
+      live: "https://crypto.thecodersingh.com/",
+    },
+    {
+      title: "Aura",
+      description:
+        "Aura helps you make informed travel decisions by providing real-time air quality updates for your destination. It tells you whether it’s safe to travel and offers personalized precautions.",
+      icon: Brain,
+      tags: ["React", "JavaScript", "MySQL", "Node.js", "Express"],
+      status: "Live",
+      color: "border-creative-pink/20 hover:border-creative-pink/40",
+      role: "Lead Developer",
+      impact: "Helping plan trips with air quality insights",
+      code: "https://github.com/TheCoderSingh/aura",
+      live: "https://aura.thecodersingh.com/",
+    },
+    {
+      title: "Alunos",
+      description:
+        "Alunos enhances homestay experiences by streamlining management for Canadian companies and making communication between hosts, students, and coordinators seamless.",
       icon: GraduationCap,
-      tags: ['Vue.js', 'Laravel', 'Quasar', 'GraphQL'],
-      status: 'Live',
-      color: 'border-accent/20 hover:border-accent/40',
-      role: 'Backend Developer',
-      impact: 'Streamlining Homestay Management and Communication',
-      code: 'https://github.com/TheCoderSingh/alunos-website',
-      live: 'https://alunos.thecodersingh.com/'
-    }
+      tags: ["Vue.js", "Laravel", "Quasar", "GraphQL"],
+      status: "Live",
+      color: "border-accent/20 hover:border-accent/40",
+      role: "Backend Developer",
+      impact: "Streamlining Homestay Management and Communication",
+      code: "https://github.com/TheCoderSingh/alunos-website",
+      live: "https://alunos.thecodersingh.com/",
+    },
   ];
 
   return (
@@ -62,16 +97,20 @@ const Projects = () => {
       <div className="container mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Featured <span className="bg-gradient-creative bg-clip-text text-transparent">Projects</span>
+            Featured{" "}
+            <span className="bg-gradient-creative bg-clip-text text-transparent">
+              Projects
+            </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            From startup co-founding to side projects, each application represents a passion for solving real problems through technology.
+            From startup co-founding to side projects, each application
+            represents a passion for solving real problems through technology.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <Card 
+            <Card
               key={project.title}
               className={`group ${project.color} transition-all duration-500 hover:shadow-card-custom hover:scale-[1.02] animate-fade-in`}
               style={{ animationDelay: `${index * 0.2}s` }}
@@ -86,15 +125,21 @@ const Projects = () => {
                       <CardTitle className="text-xl text-foreground group-hover:text-primary transition-colors duration-300">
                         {project.title}
                       </CardTitle>
-                      <p className="text-sm text-muted-foreground">{project.role}</p>
+                      <p className="text-sm text-muted-foreground">
+                        {project.role}
+                      </p>
                     </div>
                   </div>
-                  <Badge 
-                    variant="outline" 
+                  <Badge
+                    variant="outline"
                     className={`
-                      ${project.status === 'Live' ? 'border-accent text-accent' : 
-                        project.status === 'Beta' ? 'border-creative-yellow text-creative-yellow' : 
-                        'border-creative-yellow text-creative-yellow'}
+                      ${
+                        project.status === "Live"
+                          ? "border-accent text-accent"
+                          : project.status === "Beta"
+                          ? "border-creative-yellow text-creative-yellow"
+                          : "border-creative-yellow text-creative-yellow"
+                      }
                     `}
                   >
                     {project.status}
@@ -103,9 +148,11 @@ const Projects = () => {
                 <CardDescription className="text-muted-foreground leading-relaxed">
                   {project.description}
                 </CardDescription>
-                <p className="text-sm font-medium text-accent mt-2">{project.impact}</p>
+                <p className="text-sm font-medium text-accent mt-2">
+                  {project.impact}
+                </p>
               </CardHeader>
-              
+
               <CardContent>
                 <div className="space-y-4">
                   <div className="flex flex-wrap gap-2">
@@ -115,16 +162,26 @@ const Projects = () => {
                       </Badge>
                     ))}
                   </div>
-                  
+
                   <div className="flex gap-3">
                     {project.code && (
-                      <Button variant="ghost" size="sm" className="group-hover:text-primary transition-colors duration-300" onClick={() => window.open(project.code, '_blank')}>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="group-hover:text-primary transition-colors duration-300"
+                        onClick={() => window.open(project.code, "_blank")}
+                      >
                         <SiGithub className="w-4 h-4 mr-2" />
                         Code
                       </Button>
                     )}
-                    
-                    <Button variant="ghost" size="sm" className="group-hover:text-primary transition-colors duration-300" onClick={() => window.open(project.live, '_blank')}>
+
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="group-hover:text-primary transition-colors duration-300"
+                      onClick={() => window.open(project.live, "_blank")}
+                    >
                       <ExternalLink className="w-4 h-4 mr-2" />
                       Live
                     </Button>
@@ -135,8 +192,16 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12 animate-fade-in" style={{ animationDelay: '0.8s' }}>
-          <Button variant="accent" size="lg" className="group" onClick={() => window.open(githubLink, '_blank')}>
+        <div
+          className="text-center mt-12 animate-fade-in"
+          style={{ animationDelay: "0.8s" }}
+        >
+          <Button
+            variant="accent"
+            size="lg"
+            className="group"
+            onClick={() => window.open(githubLink, "_blank")}
+          >
             <SiGithub className="w-5 h-5 mr-2 group-hover:rotate-12 transition-transform duration-300" />
             View All Projects on GitHub
           </Button>
